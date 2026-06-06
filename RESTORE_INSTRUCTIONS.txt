@@ -1,0 +1,31 @@
+AOMIL Restore Package - Correct version 13fca83
+
+Upload contents of this ZIP to the GitHub repository root to restore the correct homepage and core files.
+
+Important:
+Uploading this package will overwrite correct files, but GitHub upload will NOT automatically delete extra wrong files that were added later.
+
+After uploading, manually delete these extra placeholder files from GitHub if they still exist:
+about.html
+angel-lantern.html
+big-ben-lantern.html
+contact.html
+factory.html
+flying-reindeer-lantern.html
+gold-angel-tree-topper.html
+halloween.html
+haunted-house-lantern.html
+holiday-projector.html
+nativity-lantern.html
+oem-odm.html
+projectors.html
+pumpkin-lantern.html
+red-bow-tree-topper.html
+silver-angel-tree-topper.html
+skeleton-lantern.html
+snow-globe-lanterns.html
+telephone-booth-lantern.html
+tree-toppers.html
+
+Correct commit source:
+13fca837dbe0584f6a449320e79b82129ef3d65c

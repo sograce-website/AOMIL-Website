@@ -1,0 +1,27 @@
+AOMIL V2.1 COMPLETE UPDATE - CORRECT SOURCE BASED
+
+This package is based on the restored correct version:
+13fca837dbe0584f6a449320e79b82129ef3d65c
+
+Upload method:
+1. Unzip this package.
+2. In GitHub AOMIL-Website repository, upload all files/folders from the unzipped package.
+3. Choose overwrite existing files when prompted.
+4. Commit changes.
+5. Netlify will auto deploy.
+
+Included:
+- Original correct assets folder preserved
+- Original correct homepage preserved and enhanced, not replaced by a blank template
+- P1 pages: about, OEM/ODM, factory, contact
+- P2 collection pages
+- P3 core product pages
+- Updated sitemap.xml
+- Updated robots.txt
+- GA4 event tracking for WhatsApp, email and inquiry submissions
+
+After deploy:
+- Visit https://aomil.com
+- Visit https://aomil.com/about.html
+- Visit https://aomil.com/sitemap.xml
+- Resubmit sitemap.xml in Google Search Console and Bing Webmaster.
