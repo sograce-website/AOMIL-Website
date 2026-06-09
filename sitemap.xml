@@ -1,37 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://aomil.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-<url><loc>https://aomil.com/about.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/oem-odm.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://aomil.com/factory.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/contact.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/snow-globe.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/christmas-tree.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/tree-topper.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/halloween.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/projector.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/window-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/ski-candle-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/santa-candle-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/new-santa-candle-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/snowman-candle-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/reindeer-christmas-tree.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/snowman-christmas-tree.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/oval-fireplace-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/oval-reindeer-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/long-santa-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/orange-halloween-candle.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/pink-halloween-candle.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/green-halloween-candle.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/snowflake-tree-topper.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/star-tree-topper.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/santa-tree-topper.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/dual-lens-projector.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/single-skeleton-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/double-skeleton-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/haunted-house-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/pumpkin-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/classic-angel-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/angel-christmas-tree.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://aomil.com/church-nativity-lantern.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://aomil.com/oem-service.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://aomil.com/faq.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
