@@ -1,0 +1,14 @@
+
+/* Replace existing Español menu link with button style */
+.lang-es{
+background:#e53935;
+color:#fff!important;
+padding:10px 18px;
+border-radius:999px;
+font-weight:800;
+border:3px solid #f6c453;
+display:inline-block;
+}
+.lang-es:hover{
+background:#c62828;
+}
