@@ -1,0 +1,8 @@
+AOMIL V2.6 P4 Spanish Nav Fix
+
+Includes:
+- /es/ Spanish pages
+- sitemap-es.xml
+- updated English index.html with Español link in the navigation
+
+Upload all files/folders to D:\AOMIL-Website and replace existing files.
