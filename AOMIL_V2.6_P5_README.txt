@@ -1,0 +1,1 @@
+V2.6 P5 update: packaging.html, FAQ SEO expansion, sitemap and robots update, nav includes Packaging and Español button styling.
