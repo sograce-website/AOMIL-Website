@@ -1,0 +1,19 @@
+{
+  "merged_packages": [
+    "AOMIL_V2.5_PAGES_MAIN_IMAGES.zip",
+    "AOMIL_V2.5_PRODUCT_PAGES_GALLERY_UPDATE.zip",
+    "AOMIL_V2.5_MEDIA_PATCH_01A_CHRISTMAS_IMAGES.zip",
+    "AOMIL_V2.5_MEDIA_PATCH_01B_CHRISTMAS_IMAGES.zip",
+    "AOMIL_V2.5_MEDIA_PATCH_02_TREE_TOPPER_PROJECTOR_IMAGES.zip",
+    "AOMIL_V2.5_MEDIA_PATCH_03_HALLOWEEN_IMAGES.zip"
+  ],
+  "missing_packages": [],
+  "total_files": 193,
+  "counts": {
+    "html": 34,
+    "xml": 1,
+    "text": 8,
+    "image": 150
+  },
+  "total_size_mb": 145.23
+}

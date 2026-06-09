@@ -1,0 +1,31 @@
+AOMIL V2.5 GitHub Ready Package
+
+This package is a NORMAL website directory, not ZIP-inside-ZIP.
+
+Upload contents to GitHub root:
+- index.html
+- about.html
+- oem-odm.html
+- factory.html
+- contact.html
+- collection pages
+- product pages
+- assets/products/
+- sitemap.xml
+- robots.txt
+
+Recommended upload:
+1. Back up current GitHub first.
+2. Unzip this package on your computer.
+3. Upload ALL files/folders inside to the GitHub repository root.
+4. Commit changes.
+5. Netlify auto deploys.
+6. Check:
+   https://aomil.com/
+   https://aomil.com/sitemap.xml
+   https://aomil.com/snow-globe.html
+
+Important:
+- This package includes HTML pages and image assets.
+- Video files are NOT included here because total video size is too large.
+- Video patches can be uploaded later in batches.
