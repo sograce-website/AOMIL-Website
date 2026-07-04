@@ -1,1 +1,10 @@
-https://github.com/sograce-website/AOMIL-Website/edit/main/sitemap-es.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://aomil.com/es/</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aomil.com/es/contact.html</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aomil.com/es/faq.html</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aomil.com/es/halloween.html</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aomil.com/es/oem-service.html</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aomil.com/es/projector.html</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aomil.com/es/snow-globe.html</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>
