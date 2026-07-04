@@ -1,4 +1,4 @@
-[build]
+﻿[build]
   publish = "."
 
 [[headers]]
@@ -6,8 +6,342 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/es"
+  to = "/es/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/angel-christmas-tree"
+  to = "/angel-christmas-tree.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/angel-lantern"
+  to = "/angel-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/big-ben-lantern"
+  to = "/big-ben-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/christmas-tree"
+  to = "/christmas-tree.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/church-nativity-lantern"
+  to = "/church-nativity-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/classic-angel-lantern"
+  to = "/classic-angel-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/double-skeleton-lantern"
+  to = "/double-skeleton-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dual-lens-projector"
+  to = "/dual-lens-projector.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/factory"
+  to = "/factory.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/flying-reindeer-lantern"
+  to = "/flying-reindeer-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-angel-tree-topper"
+  to = "/gold-angel-tree-topper.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/green-halloween-candle"
+  to = "/green-halloween-candle.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/halloween"
+  to = "/halloween.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/haunted-house-lantern"
+  to = "/haunted-house-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/holiday-projector"
+  to = "/holiday-projector.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/long-santa-lantern"
+  to = "/long-santa-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nativity-lantern"
+  to = "/nativity-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/new-santa-candle-lantern"
+  to = "/new-santa-candle-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oem-odm"
+  to = "/oem-odm.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oem-service"
+  to = "/oem-service.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/orange-halloween-candle"
+  to = "/orange-halloween-candle.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oval-fireplace-lantern"
+  to = "/oval-fireplace-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/oval-reindeer-lantern"
+  to = "/oval-reindeer-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/packaging"
+  to = "/packaging.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pink-halloween-candle"
+  to = "/pink-halloween-candle.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projector"
+  to = "/projector.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projectors"
+  to = "/projectors.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pumpkin-lantern"
+  to = "/pumpkin-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/red-bow-tree-topper"
+  to = "/red-bow-tree-topper.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reindeer-christmas-tree"
+  to = "/reindeer-christmas-tree.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/santa-candle-lantern"
+  to = "/santa-candle-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/santa-tree-topper"
+  to = "/santa-tree-topper.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/silver-angel-tree-topper"
+  to = "/silver-angel-tree-topper.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/single-skeleton-lantern"
+  to = "/single-skeleton-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/skeleton-lantern"
+  to = "/skeleton-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ski-candle-lantern"
+  to = "/ski-candle-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/snowflake-tree-topper"
+  to = "/snowflake-tree-topper.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/snow-globe"
+  to = "/snow-globe.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/snow-globe-lanterns"
+  to = "/snow-globe-lanterns.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/snowman-candle-lantern"
+  to = "/snowman-candle-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/snowman-christmas-tree"
+  to = "/snowman-christmas-tree.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/star-tree-topper"
+  to = "/star-tree-topper.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/telephone-booth-lantern"
+  to = "/telephone-booth-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tree-topper"
+  to = "/tree-topper.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tree-toppers"
+  to = "/tree-toppers.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/window-lantern"
+  to = "/window-lantern.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/contact"
+  to = "/es/contact.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/faq"
+  to = "/es/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/halloween"
+  to = "/es/halloween.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/oem-service"
+  to = "/es/oem-service.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/projector"
+  to = "/es/projector.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/snow-globe"
+  to = "/es/snow-globe.html"
+  status = 301
+  force = true
+
+
