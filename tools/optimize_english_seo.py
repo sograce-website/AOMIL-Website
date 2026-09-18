@@ -71,9 +71,9 @@ PAGE_META: dict[str, tuple[str, str, str]] = {
         "Lighted Christmas Lantern Decorations",
     ),
     "christmas-tree.html": (
-        "Christmas Tree Snow Globe Decorations Wholesale | AOMIL",
-        "Browse tree-shaped Christmas snow globe decorations with angel, reindeer and snowman scenes for wholesale seasonal assortments.",
-        "Christmas Tree Snow Globe Decorations",
+        "Christmas Tree Snow Globes & Water Lanterns | AOMIL",
+        "Browse lighted Christmas tree-shaped snow globes and water lanterns with angel, reindeer and snowman scenes for wholesale seasonal collections.",
+        "Christmas Tree Snow Globes & Water Lanterns",
     ),
     "tree-topper.html": (
         "Christmas Tree Topper Manufacturer & Supplier | AOMIL",
@@ -110,9 +110,9 @@ PRODUCTS: dict[str, tuple[str, str, str, str]] = {
     "santa-candle-lantern.html": ("Santa Christmas Candle Lantern", "/snow-globe.html", "Christmas snow globes and lanterns", "a candle-shaped lantern with a Santa Christmas scene"),
     "new-santa-candle-lantern.html": ("Santa Christmas Candle Lantern Design", "/snow-globe.html", "Christmas snow globes and lanterns", "a Santa-themed candle lantern design"),
     "snowman-candle-lantern.html": ("Snowman Christmas Candle Lantern", "/snow-globe.html", "Christmas snow globes and lanterns", "a candle-shaped lantern with a snowman scene"),
-    "reindeer-christmas-tree.html": ("Flying Reindeer Christmas Tree Snow Globe", "/christmas-tree.html", "Christmas tree snow globe decorations", "a tree-shaped snow globe with a flying reindeer scene"),
-    "snowman-christmas-tree.html": ("Snowman Christmas Tree Snow Globe", "/christmas-tree.html", "Christmas tree snow globe decorations", "a tree-shaped snow globe with a snowman scene"),
-    "angel-christmas-tree.html": ("Angel Christmas Tree Snow Globe", "/christmas-tree.html", "Christmas tree snow globe decorations", "a tree-shaped snow globe with an angel scene"),
+    "reindeer-christmas-tree.html": ("Flying Reindeer Christmas Tree Snow Globe", "/christmas-tree.html", "Christmas Tree Snow Globes & Water Lanterns", "a tree-shaped snow globe with a flying reindeer scene"),
+    "snowman-christmas-tree.html": ("Snowman Christmas Tree Snow Globe", "/christmas-tree.html", "Christmas Tree Snow Globes & Water Lanterns", "a tree-shaped snow globe with a snowman scene"),
+    "angel-christmas-tree.html": ("Angel Christmas Tree Snow Globe", "/christmas-tree.html", "Christmas Tree Snow Globes & Water Lanterns", "a tree-shaped snow globe with an angel scene"),
     "oval-fireplace-lantern.html": ("Oval Fireplace Christmas Snow Globe Lantern", "/snow-globe.html", "Christmas snow globes and lanterns", "an oval lantern with a fireplace Christmas scene"),
     "oval-reindeer-lantern.html": ("Oval Flying Reindeer Snow Globe Lantern", "/snow-globe.html", "Christmas snow globes and lanterns", "an oval lantern with a flying reindeer scene"),
     "long-santa-lantern.html": ("Long Santa Christmas Snow Globe Lantern", "/snow-globe.html", "Christmas snow globes and lanterns", "a long-format lantern with a Santa Christmas scene"),
@@ -227,9 +227,10 @@ def product_schema(content: str, filename: str, name: str, description: str, cat
     if breadcrumb is None:
         breadcrumb = {"@type": "BreadcrumbList"}
         graph.insert(0, breadcrumb)
+    category_label = category_anchor if category_url == "/christmas-tree.html" else category_anchor.title()
     breadcrumb["itemListElement"] = [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
-        {"@type": "ListItem", "position": 2, "name": category_anchor.title(), "item": SITE + category_url},
+        {"@type": "ListItem", "position": 2, "name": category_label, "item": SITE + category_url},
         {"@type": "ListItem", "position": 3, "name": name, "item": url},
     ]
     product = next((node for node in graph if node.get("@type") == "Product"), None)
@@ -273,11 +274,15 @@ def optimize_product(path: Path, product: tuple[str, str, str, str]) -> None:
         title = f"{name} Wholesale Supplier | AOMIL"
     description = f"Wholesale {name} from AOMIL for seasonal retail and private-label ranges. View verified images and request product details."
     content = repair_section_placement(path.read_text(encoding="utf-8"))
+    content = content.replace('<a href="/christmas-tree.html">Christmas Trees</a>', '<a href="/christmas-tree.html">Tree Snow Globes</a>')
+    content = content.replace("<a href='/christmas-tree.html'>Christmas Trees</a>", "<a href='/christmas-tree.html'>Tree Snow Globes</a>")
     content = update_meta(content, title, description)
     content = replace_once(content, r"<h1[^>]*>.*?</h1>", f"<h1>{html.escape(name)}</h1>")
     # Replace the short hero statement while retaining all verified media/specification content.
     hero_intro = f"Explore {html.escape(descriptor)} for wholesale seasonal ranges. AOMIL supports commercial inquiries and private-label project discussions."
     content = replace_once(content, r"(<section\s+class=['\"][^'\"]*hero[^'\"]*['\"][^>]*>.*?<h1[^>]*>.*?</h1>)\s*<p>.*?</p>", rf"\1<p>{hero_intro}</p>")
+    if category_url == "/christmas-tree.html":
+        content = content.replace("<span class='tag'>Christmas Tree</span>", "<span class='tag'>Tree Snow Globe</span>")
     content = image_alts(content, name)
     content = product_schema(content, filename, name, description, category_url, category_anchor)
     if "seo-links" not in content:
@@ -287,7 +292,7 @@ def optimize_product(path: Path, product: tuple[str, str, str, str]) -> None:
 
 CATEGORY_COPY: dict[str, str] = {
     "snow-globe.html": '<section class="section seo-copy"><h2>Lighted Christmas Decorations for Seasonal Buyers</h2><p>This collection brings together Christmas snow globes, water lanterns and candle-shaped lanterns for importers, wholesalers, retailers and e-commerce ranges. Browse individual pages for verified imagery, then contact AOMIL to discuss the designs that fit your program.</p><p>Explore <a href="/window-lantern.html">Christmas window lantern decorations</a>, <a href="/nativity-lantern.html">Nativity Christmas lanterns</a> and <a href="/christmas-tree.html">tree-shaped Christmas snow globes</a>.</p></section>',
-    "christmas-tree.html": '<section class="section seo-copy"><h2>Tree-Shaped Christmas Snow Globe Collection</h2><p>These Christmas tree decorations combine tree-shaped displays with angel, reindeer or snowman scenes. The collection is intended for commercial buyers building coordinated Christmas gift and tabletop decoration assortments.</p><p>Compare the <a href="/angel-christmas-tree.html">angel design</a>, <a href="/reindeer-christmas-tree.html">flying reindeer design</a> and <a href="/snowman-christmas-tree.html">snowman design</a>, or browse our <a href="/snow-globe.html">wider Christmas lantern collection</a>.</p></section>',
+    "christmas-tree.html": '<section class="section seo-copy"><h2>Christmas Tree-Shaped Water Lantern Collection</h2><p>These are decorative snow globes and water lanterns shaped like Christmas trees—not artificial or natural Christmas trees. Angel, reindeer and snowman scenes make them suitable for commercial buyers building coordinated Christmas gift, tabletop and lighted decoration assortments.</p><p>Compare the <a href="/angel-christmas-tree.html">angel tree-shaped snow globe</a>, <a href="/reindeer-christmas-tree.html">flying reindeer tree-shaped snow globe</a> and <a href="/snowman-christmas-tree.html">snowman tree-shaped snow globe</a>, or browse our <a href="/snow-globe.html">wider wholesale Christmas snow globe collection</a>.</p></section>',
     "tree-topper.html": '<section class="section seo-copy"><h2>Projection Christmas Tree Topper Designs</h2><p>AOMIL offers star, snowflake and Santa projection tree toppers for wholesale seasonal ranges and private-label discussions. Each product page contains the verified gallery and inquiry route for that design.</p><p>Compare <a href="/star-tree-topper.html">star projection toppers</a>, <a href="/snowflake-tree-topper.html">snowflake projection toppers</a> and <a href="/santa-tree-topper.html">Santa projection toppers</a>. For decorative angel and bow styles, see the <a href="/tree-toppers.html">decorative tree topper guide</a>.</p></section>',
     "projector.html": '<section class="section seo-copy"><h2>Outdoor Christmas Projector Options</h2><p>The AOMIL projector range covers dual-lens holiday lighting for Christmas and Halloween displays. Review the verified product pages for available imagery and documented features, then send an inquiry for current commercial details.</p><p>View the <a href="/dual-lens-projector.html">dual-lens outdoor Christmas projector</a> or the <a href="/holiday-projector.html">2-in-1 Christmas and Halloween projector</a>. Buyers planning custom seasonal ranges can also review our <a href="/oem-service.html">OEM service</a>.</p></section>',
     "halloween.html": '<section class="section seo-copy"><h2>Halloween Lanterns and Flameless Candles</h2><p>Build a Halloween assortment from snow globe lanterns and colored flameless candles shown in the verified AOMIL product catalog. Product pages link to available images and direct commercial inquiry options.</p><p>Browse <a href="/pumpkin-lantern.html">pumpkin lanterns</a>, <a href="/haunted-house-lantern.html">haunted-house lanterns</a>, <a href="/skeleton-lantern.html">skeleton lanterns</a> and <a href="/orange-halloween-candle.html">Halloween flameless candles</a>.</p></section>',
@@ -298,6 +303,8 @@ def optimize_standard(path: Path, meta: tuple[str, str, str]) -> None:
     title, description, h1 = meta
     content = repair_section_placement(path.read_text(encoding="utf-8"))
     content = update_meta(content, title, description)
+    content = content.replace('<a href="/christmas-tree.html">Christmas Trees</a>', '<a href="/christmas-tree.html">Tree Snow Globes</a>')
+    content = content.replace("<a href='/christmas-tree.html'>Christmas Trees</a>", "<a href='/christmas-tree.html'>Tree Snow Globes</a>")
     content = replace_once(content, r"<h1[^>]*>.*?</h1>", f"<h1>{html.escape(h1)}</h1>")
     content = image_alts(content, h1)
     content = contextual_card_alts(content)
@@ -308,13 +315,24 @@ def optimize_standard(path: Path, meta: tuple[str, str, str]) -> None:
             r"\1<p>AOMIL supplies Christmas decorations, lighted snow globe lanterns, projection tree toppers and holiday projectors for importers, wholesalers, retailers and e-commerce sellers. Explore wholesale products or discuss OEM and private-label requirements.</p>",
         )
         content = content.replace("<h2>Product Categories</h2>", "<h2>Wholesale Christmas &amp; Seasonal Product Categories</h2>", 1)
+        content = content.replace("<h3>Christmas Trees</h3>", "<h3>Christmas Tree-Shaped Snow Globes</h3>", 1)
+        content = content.replace("<h3>Tree-Shaped Snow Globes</h3>", "<h3>Christmas Tree-Shaped Snow Globes</h3>", 1)
+        content = content.replace('alt="Christmas Trees"', 'alt="Tree-Shaped Christmas Snow Globes"', 1)
+        content = content.replace('>Christmas Trees</div>\'"><h3>Christmas Tree-Shaped Snow Globes</h3>', '>Tree Snow Globes</div>\'"><h3>Christmas Tree-Shaped Snow Globes</h3>', 1)
+        content = content.replace("<a class='btn' href='/christmas-tree.html'>View Collection</a>", "<a class='btn' href='/christmas-tree.html'>View Tree Snow Globes</a>", 1)
     elif path.name in {"snow-globe.html", "christmas-tree.html", "tree-topper.html", "projector.html", "halloween.html", "snow-globe-lanterns.html", "tree-toppers.html"}:
         content = replace_once(
             content,
             r"(<section\s+class=['\"][^'\"]*hero[^'\"]*['\"][^>]*>.*?<h1[^>]*>.*?</h1>)\s*<p>.*?</p>",
             rf"\1<p>{html.escape(description)}</p>",
         )
-    if path.name in CATEGORY_COPY and "seo-copy" not in content:
+    if path.name == "christmas-tree.html":
+        content = content.replace("<h2>Christmas Tree Products</h2>", "<h2>Christmas Tree Snow Globes</h2>", 1)
+        content = content.replace("<p>Christmas Tree for wholesale, OEM and Amazon sellers.</p>", "<p>Tree-shaped snow globe and water lantern for wholesale seasonal collections.</p>")
+        content = content.replace("<span class='tag'>Christmas Tree</span>", "<span class='tag'>Tree Snow Globe</span>")
+    if path.name == "christmas-tree.html" and "seo-copy" in content:
+        content = replace_once(content, r'<section class="section seo-copy">.*?</section>', CATEGORY_COPY[path.name])
+    elif path.name in CATEGORY_COPY and "seo-copy" not in content:
         content = replace_once(content, r"<footer", CATEGORY_COPY[path.name] + "<footer")
     # Keep JSON-LD descriptions in sync with visible metadata. Product JSON-LD is
     # handled separately above.
@@ -328,6 +346,18 @@ def optimize_standard(path: Path, meta: tuple[str, str, str]) -> None:
                 node["knowsAbout"] = ["Christmas decorations", "Christmas snow globe lanterns", "Christmas tree toppers", "holiday projectors", "Halloween decorations"]
             if path.name == "index.html" and node.get("@type") == "WebSite":
                 node["description"] = "AOMIL wholesale Christmas and Halloween decoration catalog and OEM service website."
+        if path.name == "christmas-tree.html" and not any(node.get("@type") == "CollectionPage" for node in data.get("@graph", [])):
+            data.setdefault("@graph", []).append({
+                "@type": "CollectionPage",
+                "name": h1,
+                "description": description,
+                "url": SITE + "/christmas-tree.html",
+                "isPartOf": {"@id": SITE + "/#website"},
+                "about": [
+                    {"@type": "Thing", "name": "Christmas tree snow globes"},
+                    {"@type": "Thing", "name": "Christmas tree water lanterns"},
+                ],
+            })
         encoded = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
         content = content[:schema_match.start()] + f'<script type="application/ld+json">{encoded}</script>' + content[schema_match.end():]
     path.write_text(content, encoding="utf-8", newline="\n")
