@@ -61,3 +61,29 @@
   to = "/es/projector.html"
   status = 301
   force = true
+
+# Consolidate the legacy competing projector collection on the active catalog URL.
+[[redirects]]
+  from = "/projectors.html"
+  to = "/projector.html"
+  status = 301
+  force = true
+
+# The published sitemap and canonical convention use explicit .html URLs.
+[[redirects]]
+  from = "/fr/:page"
+  to = "/fr/:page.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/:page"
+  to = "/es/:page.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:page"
+  to = "/:page.html"
+  status = 301
+  force = true

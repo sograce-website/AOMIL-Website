@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://aomil.com/sitemap.xml
 Sitemap: https://aomil.com/sitemap-es.xml
+Sitemap: https://aomil.com/sitemap-fr.xml
