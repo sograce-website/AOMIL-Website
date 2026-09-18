@@ -1,6 +1,11 @@
 [build]
   publish = "."
 
+# Canonical URLs intentionally retain the .html suffix. Disable Netlify's
+# Pretty URLs post-processing so canonical files are served directly at 200.
+[build.processing.html]
+  pretty_urls = false
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -8,82 +13,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-[[redirects]]
-  from = "/projector"
-  to = "/projector.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/tree-topper"
-  to = "/tree-topper.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/snow-globe"
-  to = "/snow-globe.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/halloween"
-  to = "/halloween.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/faq"
-  to = "/faq.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/halloween"
-  to = "/es/halloween.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/faq"
-  to = "/es/faq.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/projector"
-  to = "/es/projector.html"
-  status = 301
-  force = true
-
-# Consolidate the legacy competing projector collection on the active catalog URL.
-[[redirects]]
-  from = "/projectors.html"
-  to = "/projector.html"
-  status = 301
-  force = true
-
-# The published sitemap and canonical convention use explicit .html URLs.
-[[redirects]]
-  from = "/fr/:page"
-  to = "/fr/:page.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/:page"
-  to = "/es/:page.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/:page"
-  to = "/:page.html"
-  status = 301
-  force = true
+# Redirects are enumerated in _redirects. Do not use a /:page placeholder here:
+# Netlify placeholders also match filenames, so /page.html would become
+# /page.html.html and trap canonical URLs in a redirect loop.

@@ -1,0 +1,66 @@
+# Canonical URLs use explicit .html suffixes. Each extensionless duplicate
+# redirects once to its final canonical file. The force marker prevents static
+# file shadowing from serving an extensionless duplicate with HTTP 200.
+/about  /about.html  301!
+/angel-christmas-tree  /angel-christmas-tree.html  301!
+/angel-lantern  /angel-lantern.html  301!
+/big-ben-lantern  /big-ben-lantern.html  301!
+/christmas-tree  /christmas-tree.html  301!
+/church-nativity-lantern  /church-nativity-lantern.html  301!
+/classic-angel-lantern  /classic-angel-lantern.html  301!
+/contact  /contact.html  301!
+/double-skeleton-lantern  /double-skeleton-lantern.html  301!
+/dual-lens-projector  /dual-lens-projector.html  301!
+/es/contact  /es/contact.html  301!
+/es/faq  /es/faq.html  301!
+/es/halloween  /es/halloween.html  301!
+/es/oem-service  /es/oem-service.html  301!
+/es/projector  /es/projector.html  301!
+/es/snow-globe  /es/snow-globe.html  301!
+/factory  /factory.html  301!
+/faq  /faq.html  301!
+/flying-reindeer-lantern  /flying-reindeer-lantern.html  301!
+/fr/decoration-fenetre-noel  /fr/decoration-fenetre-noel.html  301!
+/fr/decorations-noel  /fr/decorations-noel.html  301!
+/fr/decorations-sapin-noel  /fr/decorations-sapin-noel.html  301!
+/fr/projecteur-noel  /fr/projecteur-noel.html  301!
+/fr/projecteur-noel-exterieur  /fr/projecteur-noel-exterieur.html  301!
+/gold-angel-tree-topper  /gold-angel-tree-topper.html  301!
+/green-halloween-candle  /green-halloween-candle.html  301!
+/halloween  /halloween.html  301!
+/haunted-house-lantern  /haunted-house-lantern.html  301!
+/holiday-projector  /holiday-projector.html  301!
+/long-santa-lantern  /long-santa-lantern.html  301!
+/nativity-lantern  /nativity-lantern.html  301!
+/new-santa-candle-lantern  /new-santa-candle-lantern.html  301!
+/oem-odm  /oem-odm.html  301!
+/oem-service  /oem-service.html  301!
+/orange-halloween-candle  /orange-halloween-candle.html  301!
+/oval-fireplace-lantern  /oval-fireplace-lantern.html  301!
+/oval-reindeer-lantern  /oval-reindeer-lantern.html  301!
+/packaging  /packaging.html  301!
+/pink-halloween-candle  /pink-halloween-candle.html  301!
+/projector  /projector.html  301!
+/pumpkin-lantern  /pumpkin-lantern.html  301!
+/red-bow-tree-topper  /red-bow-tree-topper.html  301!
+/reindeer-christmas-tree  /reindeer-christmas-tree.html  301!
+/santa-candle-lantern  /santa-candle-lantern.html  301!
+/santa-tree-topper  /santa-tree-topper.html  301!
+/silver-angel-tree-topper  /silver-angel-tree-topper.html  301!
+/single-skeleton-lantern  /single-skeleton-lantern.html  301!
+/skeleton-lantern  /skeleton-lantern.html  301!
+/ski-candle-lantern  /ski-candle-lantern.html  301!
+/snow-globe  /snow-globe.html  301!
+/snow-globe-lanterns  /snow-globe-lanterns.html  301!
+/snowflake-tree-topper  /snowflake-tree-topper.html  301!
+/snowman-candle-lantern  /snowman-candle-lantern.html  301!
+/snowman-christmas-tree  /snowman-christmas-tree.html  301!
+/star-tree-topper  /star-tree-topper.html  301!
+/telephone-booth-lantern  /telephone-booth-lantern.html  301!
+/tree-topper  /tree-topper.html  301!
+/tree-toppers  /tree-toppers.html  301!
+/window-lantern  /window-lantern.html  301!
+
+# Consolidate both legacy projector collection variants in one hop.
+/projectors  /projector.html  301!
+/projectors.html  /projector.html  301!

@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import tomllib
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 from html.parser import HTMLParser
@@ -68,6 +69,7 @@ def main() -> int:
     descriptions: dict[str, list[str]] = defaultdict(list)
     canonicals: dict[str, str] = {}
     alternates: dict[str, dict[str, str]] = {}
+    page_links: dict[str, list[str]] = {}
     pages = [p for p in ROOT.rglob("*.html") if ".git" not in p.parts]
     for page in pages:
         rel = page.relative_to(ROOT).as_posix()
@@ -76,6 +78,7 @@ def main() -> int:
         content = page.read_text(encoding="utf-8")
         parser = PageParser()
         parser.feed(content)
+        page_links[rel] = parser.links
         if parser.h1 != 1:
             errors.append(f"{rel}: expected one H1, found {parser.h1}")
         if parser.title:
@@ -149,6 +152,62 @@ def main() -> int:
         errors.append("canonical URLs missing from sitemaps: " + ", ".join(sorted(missing)))
     if extra:
         errors.append("non-canonical URLs in sitemaps: " + ", ".join(sorted(extra)))
+
+    # Redirect architecture: canonical .html files must be direct 200 targets,
+    # while extensionless duplicates redirect exactly once to those canonicals.
+    try:
+        netlify = tomllib.loads((ROOT / "netlify.toml").read_text(encoding="utf-8"))
+    except Exception as exc:
+        errors.append(f"netlify.toml: invalid TOML: {exc}")
+        netlify = {}
+    pretty_urls = netlify.get("build", {}).get("processing", {}).get("html", {}).get("pretty_urls")
+    if pretty_urls is not False:
+        errors.append("netlify.toml: build.processing.html.pretty_urls must be false for .html canonicals")
+
+    redirect_rules: dict[str, tuple[str, str]] = {}
+    redirect_file = ROOT / "_redirects"
+    if not redirect_file.exists():
+        errors.append("missing _redirects file")
+    else:
+        for line_number, raw in enumerate(redirect_file.read_text(encoding="utf-8").splitlines(), 1):
+            line = raw.strip()
+            if not line or line.startswith("#"):
+                continue
+            fields = line.split()
+            if len(fields) != 3:
+                errors.append(f"_redirects:{line_number}: expected source target status")
+                continue
+            source, target, status = fields
+            if source in redirect_rules:
+                errors.append(f"_redirects:{line_number}: duplicate source {source}")
+            redirect_rules[source] = (target, status)
+
+    canonical_paths = {urlparse(url).path for url in expected}
+    for source, (target, status) in redirect_rules.items():
+        if source in canonical_paths:
+            errors.append(f"canonical URL is also a redirect source: {source}")
+        if status not in {"301", "301!"}:
+            errors.append(f"redirect is not permanent: {source} -> {target} ({status})")
+        if target not in canonical_paths:
+            errors.append(f"redirect target is not canonical: {source} -> {target}")
+        if target in redirect_rules:
+            errors.append(f"redirect chain detected: {source} -> {target} -> {redirect_rules[target][0]}")
+
+    for canonical_path in sorted(path for path in canonical_paths if path.endswith(".html")):
+        extensionless = canonical_path[:-5]
+        rule = redirect_rules.get(extensionless)
+        if rule != (canonical_path, "301!"):
+            errors.append(f"missing one-hop forced redirect: {extensionless} -> {canonical_path}")
+
+    # Internal links must use the final canonical URL rather than a redirecting
+    # extensionless alias.
+    for rel, links in page_links.items():
+        for href in links:
+            parsed = urlparse(href)
+            if parsed.scheme or parsed.netloc or href.startswith(("#", "mailto:", "tel:", "javascript:")):
+                continue
+            if parsed.path in redirect_rules:
+                errors.append(f"{rel}: internal link points to redirect source {parsed.path}")
 
     print(f"Validated {len(pages) - len(SKIP_PAGES)} canonical pages")
     print(f"Errors: {len(errors)}")
