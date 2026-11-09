@@ -1,3 +1,5 @@
+# Search access: OAI-SearchBot, ChatGPT-User, PerplexityBot, Googlebot, Bingbot
+# GPTBot: existing wildcard training-crawler policy retained; no new grant.
 User-agent: *
 Allow: /
 
